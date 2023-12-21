@@ -14,7 +14,13 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
-   {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/main.js') }}" defer></script>
+
+   <!-- Styles -->
+   <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
@@ -76,5 +82,11 @@
             @yield('content')
         </main>
     </div>
+    <!-- Page specific javascripts-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.css">
+    <!-- Data table plugin-->
+    <script type="text/javascript" src="js/plugins/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/plugins/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript">$('#sampleTable').DataTable();</script>
 </body>
 </html>
