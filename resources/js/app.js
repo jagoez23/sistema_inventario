@@ -5,7 +5,9 @@
  */
 
 import './bootstrap';
-import { createApp } from 'vue';
+/*import { createApp } from 'vue';*/
+
+window.Vue = require("vue");
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
@@ -15,8 +17,10 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-/*import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);*/
+/*se comenta esta linea y compila el laravel mix */
+import ExampleComponent from './components/ExampleComponent.vue';
+
+app.component('example-component', ExampleComponent);
 
 /**
  * The following block of code may be used to automatically register your
@@ -25,6 +29,8 @@ app.component('example-component', ExampleComponent);*/
  *
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
+
+Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 // Object.entries(import.meta.glob('./**/*.vue', { eager: true })).forEach(([path, definition]) => {
 //     app.component(path.split('/').pop().replace(/\.\w+$/, ''), definition.default);
@@ -37,3 +43,7 @@ app.component('example-component', ExampleComponent);*/
  */
 
 app.mount('#app');
+
+/*const app = new Vue({
+    el:'#app',
+});*/
