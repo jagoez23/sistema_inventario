@@ -18,12 +18,12 @@ window.Vue = require('vue').default;
  * registering components with the application instance so they are ready
  * to use in your application's views. An example is included for you.
  */
-const app = createApp({});
+/*const app = createApp({});*/
 
 /*se comenta esta linea y compila el laravel mix */
-/*import ExampleComponent from './components/ExampleComponent.vue';*/
+import ExampleComponent from './components/ExampleComponent.vue';
 
-/*app.component('example-component', ExampleComponent);*/
+app.component('example-component', ExampleComponent);
 
 /**
  * The following block of code may be used to automatically register your
@@ -45,8 +45,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * scaffolding. Otherwise, you will need to add an element yourself.
  */
 
-app.mount('#app');
+/*app.mount('#app');*/
 
-/*const app = new Vue({
+const app = new Vue({
     el:'#app',
-});*/
+});
